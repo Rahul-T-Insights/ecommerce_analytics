@@ -1,15 +1,31 @@
-Welcome to your new dbt project!
+# Ecommerce Analytics — dbt + Snowflake
 
-### Using the starter project
+## Overview
 
-Try running the following commands:
-- dbt run
-- dbt test
+This project builds an analytics data model for an ecommerce dataset using dbt and Snowflake.
 
+The project transforms raw ecommerce data into clean staging models, reusable intermediate models, and business-facing marts.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Data Sources
+
+The raw data is stored in Snowflake under:
+
+- Database: `ECOMMERCE`
+- Schema: `RAW`
+
+Source tables:
+
+- `customers` — customer information
+- `orders` — customer orders and order status
+- `order_items` — individual items within orders
+
+## dbt Model Structure
+
+```text
+RAW
+ ↓
+STAGING
+ ↓
+INTERMEDIATE
+ ↓
+MARTS
