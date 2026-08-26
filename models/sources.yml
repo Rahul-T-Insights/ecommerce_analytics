@@ -42,8 +42,8 @@ sources:
             description: "Unique identifier for each order item."
           - name: order_id
             description: "Identifier of the order containing the item."
-          - name: product_id
-            description: "Identifier of the product."
+          - name: product_name
+            description: "Name of the product in the order item."
           - name: quantity
             description: "Number of units ordered."
           - name: unit_price
