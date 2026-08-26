@@ -1,6 +1,13 @@
 version: 2
 
 models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
   - name: fct_order_items
     columns:
       - name: order_item_id
