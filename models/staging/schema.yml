@@ -7,3 +7,17 @@ models:
         tests:
           - not_null
           - unique
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_order_items
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
