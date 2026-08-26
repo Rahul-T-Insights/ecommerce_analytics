@@ -4,10 +4,49 @@ sources:
   - name: raw
     database: ECOMMERCE
     schema: RAW
+    description: "Raw ecommerce data stored in Snowflake."
 
     tables:
       - name: customers
+        description: "Customer master data."
+        columns:
+          - name: customer_id
+            description: "Unique identifier for each customer."
+          - name: first_name
+            description: "Customer first name."
+          - name: last_name
+            description: "Customer last name."
+          - name: email
+            description: "Customer email address."
+          - name: updated_at
+            description: "Timestamp when the customer record was last updated."
 
       - name: orders
+        description: "Customer orders and their current status."
+        columns:
+          - name: order_id
+            description: "Unique identifier for each order."
+          - name: customer_id
+            description: "Identifier of the customer who placed the order."
+          - name: order_date
+            description: "Date the order was placed."
+          - name: status
+            description: "Current status of the order."
+          - name: updated_at
+            description: "Timestamp when the order record was last updated."
 
       - name: order_items
+        description: "Individual items belonging to customer orders."
+        columns:
+          - name: order_item_id
+            description: "Unique identifier for each order item."
+          - name: order_id
+            description: "Identifier of the order containing the item."
+          - name: product_id
+            description: "Identifier of the product."
+          - name: quantity
+            description: "Number of units ordered."
+          - name: unit_price
+            description: "Price per unit of the product."
+          - name: updated_at
+            description: "Timestamp when the order item record was last updated."
